@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Интернет-магазин Monamie: Косметика, Ароматы, Подарки, Казахстан</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div>
+    <div class="header" style=" width: 100%">
+        <div><div th:insert="det/navbar1.html :: header"></div></div>
+        <div><div th:insert="det/navbar2.html :: header2"></div></div>
+        <div><div th:insert="det/navbar3.html :: header3"></div></div>
+    </div>
+    <div class="body">
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col-6 mx-auto mt-3">
+                    <form th:action="@{/addproduct}" th:object="${product}" method="post">
+                        <div style="grid-template-columns: 30% 70%; display:grid; grid-row-gap: 20px">
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>НАЗВАНИЕ:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <input type="text" name="name" class="form-control"  placeholder="Insert name">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>ЦЕНА:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <input type="number" name="price" class="form-control"  placeholder="Insert price">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>ОПИСАНИЕ:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <textarea class="form-control" placeholder="Insert description" name="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>КАТЕГОРИЯ:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <select name="category_id" class="form-control">
+                                        <option th:each="category: ${categories}"
+                                                th:text="${category.getName()}"
+                                                th:value="${category.getId()}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>БРЕНД:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <input type="text" name="brand" class="form-control" placeholder="Insert brand">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>КАРТИНКА:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <input class="form-control form-control-sm" id="formFileSm" type="file" name="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button class="btn btn-success">ДОБАВИТЬ</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>Интернет-магазин Monamie: Косметика, Ароматы, Подарки, Казахстан</title>
@@ -16,26 +16,33 @@
 </style>
 <body>
 <div class="index-container">
-    <div class="header" style=" width: 100%">
-        <div><div th:insert="det/navbar1.html :: header"></div></div>
-        <div><div th:insert="det/navbar2.html :: header2"></div></div>
-        <div><div th:insert="det/navbar3.html :: header3"></div></div>
-    </div>
-    <div class="body">
-        <div><div ></div></div>
-        <br>
-        <div class="card" style="width: 13rem;" >
-            <img" class="card-img-top" alt="...">
+<div class="header" style=" width: 100%">
+    <div><div th:insert="det/navbar1.html :: header"></div></div>
+    <div><div th:insert="det/navbar2.html :: header2"></div></div>
+    <div><div th:insert="det/navbar3.html :: header3"></div></div>
+</div>
+<div class="body">
+    <div><div th:insert="det/carousel.html :: carousel"></div></div>
+    <br>
+<!--    <div><div th:insert="det/card.html :: card"></div></div>-->
+    <div class="container" style="display: grid; grid-template-columns: repeat(4, 200px);
+    grid-column-gap: 30px; margin-bottom: 40px; grid-row-gap: 30px">
+        <div class="card" style="width: 13rem;"  th:each="product: ${products}">
+            <img th:src="${product.image}" class="card-img-top" alt="...">
             <div class="card-body">
                 <bold class="card-title" th:text="${product.brand}"></bold>
-                <p class="card-text" ></p>
-                <p class="card-text"></p>
-                <a href="#" class="btn btn-dark" style="border-radius: 0; width: 100%">Купить</a>
+                <p class="card-text" th:text="${product.name}"></p>
+                <p class="card-text" th:text="${product.price}"></p>
+                <a th:href="@{'/details/'+${product.id}}" class="btn btn-dark" style="border-radius: 0; width: 100%">Купить</a>
             </div>
         </div>
     </div>
-
-    <div class="footer"></div>
+</div>
+    <div><div th:insert="det/subscribe.html :: subscribe"></div></div>
+<div class="footer"> <div th:insert="det/footer.html :: footer"></div></div>
 </div>
 </body>
 </html>
+
+
+

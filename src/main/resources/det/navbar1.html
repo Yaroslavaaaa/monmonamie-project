@@ -23,36 +23,38 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #ffffff; height: 3vw; font-size: small;">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">НАЙТИ МАГАЗИН</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">О КОМПАНИИ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">ОТЗЫВЫ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">КОНТАКТЫ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">ДОСТАВКА И ОПЛАТА</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FAQ</a>
-                </li>
-                <li class="nav-link">
-                    <div style="color: black">
-                        ВАШ ГОРОД:
-                        <select style="border: none">
-                            <option>Алматы</option>
-                            <option>Астана</option>
-                            <option>Шымкент</option>
-                        </select>
-                    </div>
-                </li>
-            </ul>
+            <div class="container">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">НАЙТИ МАГАЗИН</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{'/about'}">О КОМПАНИИ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">ОТЗЫВЫ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{'/contacts'}">КОНТАКТЫ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">ДОСТАВКА И ОПЛАТА</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-link">
+                        <div style="color: black">
+                            ВАШ ГОРОД:
+                            <select style="border: none">
+                                <option>Алматы</option>
+                                <option>Астана</option>
+                                <option>Шымкент</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
