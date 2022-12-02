@@ -28,7 +28,6 @@ public class PageController {
     CategoryRepository categoryRepository;
 
     @GetMapping("/")
-    @PreAuthorize("isAuthenticated()")
     public String index(Model model){
         model.addAttribute("currentUser", getCurrentUser());
         System.out.println(getCurrentUser());
@@ -55,25 +54,33 @@ public class PageController {
 
 
     @GetMapping("/about")
-    @PreAuthorize("isAuthenticated()")
     public String about(Model model){
 
         return "html/about";
     }
 
     @GetMapping("/contacts")
-    @PreAuthorize("isAuthenticated()")
     public String contacts(Model model){
 
         return "html/contacts";
     }
 
+    @GetMapping("/dostavka")
+    public String dostavka(Model model){
 
-    @GetMapping("/profile")
-    public String profile(Model model) {
-        model.addAttribute("currentUser", getCurrentUser());
-        return "html/profile";
+        return "html/dostavka";
     }
+
+    @GetMapping("/FAQ")
+    public String FAQ(Model model){
+
+        return "html/FAQ";
+    }
+
+
+
+
+
 
 
 
