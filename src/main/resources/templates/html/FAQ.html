@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+ <script src="https://use.fontawesome.com/439f629ac3.js"></script>
+
+    <title></title>
+</head>
+<body>
+<div class="header" style=" width: 100%">
+    <div><div th:insert="det/navbar1.html :: header"></div></div>
+    <div><div th:insert="det/navbar2.html :: header2"></div></div>
+    <div><div th:insert="det/navbar3.html :: header3"></div></div>
+</div>
+<div class="card mb-3" style="max-width: 1600px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+        <div th:insert="det/b-nav.html :: b-nav"></div>
+    </div>
+      <div class="col-md-8">
+      <div class="card-body">
+  <div class="card-body">
+    <h2>   <b> ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</b>
+</h2>
+     <h5 style="margin-top: 25px;">   <b>ОШИБКА ПРИ ПОПЫТКЕ АВТОРИЗАЦИИ. ЧТО ДЕЛАТЬ?</b>
+</h5>
+<p style="margin-top: 25px;">Если при попытке авторизации по e-mail или по телефону у Вас появилось сообщение о том, что введены «Неверный пароль. Пожалуйста, проверьте правильность ввода или восстановите пароль.», то Вам следует проверить правильность написания пароля или восстановить пароль. 
+Все правилы по написанию пароля должны быть учтены и при авторизации. То есть пароль должен содержать не менее из 8 символов – это латинские прописные буквы, строчные буквы и цифры.</p>
+      <img src="https://www.monamie.kz/upload/medialibrary/154/154f418fa546f3c99b143349dc84af9d.png" alt=""  width="600px" height="700px">
+       
+       <h5 style="margin-top: 45px;">   <b>ПОДБОР ТОВАРА  </b>
+</h5>
+<h6 style="margin-top: 15px;">   <b>КАК ДОБАВИТЬ ТОВАР В КОРЗИНУ?
+</b>
+</h6>
+      <p>Чтобы добавить товар в корзину, нажмите на кнопку «Купить» рядом с выбранным товаром. Если вам нужно купить несколько экземпляров товара, то вы можете нажать кнопку нужное число раз или перейти в корзину и там указать нужное количество.</p>
+ <h5 style="margin-top: 25px;">   <b>ОТМЕНА/ИЗМЕНЕНИЕ ОФОРМЛЕННОГО ЗАКАЗА</b>
+</h5> 
+<p style="margin-top: 15px;">Чтобы внести изменения или отменить уже оформленный заказ Вам нужно связаться с нашими операторами написав на почту shop@monamie.kz или по телефону 7405 (бесплатно с мобильного)</p>
+<p style="margin-top: 15px;">*В случае неоплаты заказа в течении 3-х рабочих дней, заказ автоматически отменяется. </p>
+<h5 style="margin-top: 25px;">   <b>Я ОФОРМИЛ/(-А) ЗАКАЗ. ЧТО ДАЛЬШЕ?</b></h5> 
+<a href="" style="color:black;" >ИНФОРМАЦИЯ О ПОРЯДКЕ ОБРАБОТКИ ЗАКАЗОВ В ИНТЕРНЕТ МАГАЗИНЕ</a>
+  <h5 style="margin-top: 25px;">   <b>ОПЛАТА</b>
+</h5>
+<p style="margin-top: 5px;">ИНФОРМАЦИЮ О ВОЗМОЖНЫХ ВАРИАНТАХ ОПЛАТЫ МОЖНО УВИДЕТЬ, ПЕРЕЙДЯ ПО ССЫЛКЕ</p>
+<p style="margin-top: 15px;">Оплата "Онлайн платежной системой Сбербанк/Epay" предусматривает 100% предоплату покупателем при создании заказа. До момента оплаты заказы с таким видом оплаты резервируются, но их дальнейшая сборка и упаковка не осуществляются.
+</p>
+<p style="margin-top: 15px;">Для оплаты уже созданного, но не оплаченного по каким-либо причинам заказа, Вам нужно авторизоваться на сайте и перейти в раздел Мои заказы в личном кабинете.
+</p>
+<img src="https://www.monamie.kz/upload/medialibrary/fa7/fa7af2061e903752463e3c95378dbc3b.jpg" alt=""  width="600px" >
+<p style="margin-top: 15px;">*В случае неоплаты заказа в течении 3-х рабочих дней, заказ автоматически отменяется.
+</p>
+<a th:href="@{'/dostavka'}" style="color:black;" >ИНФОРМАЦИЯ О ДОСТУПНЫХ НА ТЕКУЩИЙ МОМЕНТ СПОСОБАХ ОПЛАТЫ</a>
+
+<h5 style="margin-top: 25px;">   <b>ДОСТАВКА</b></h5> 
+<p style="margin-top: 15px;"> <b> ИНФОРМАЦИЮ О СРОКАХ ДОСТАВКИ ВЫ МОЖЕТЕ ПОЛУЧИТЬ ПЕРЕЙДЯ ПО ССЫЛКЕ</b></p>
+
+<a th:href="@{'/dostavka'}" style="color:black;" >БОЛЕЕ ПОДРОБНАЯ ИНФОРМАЦИЯ О ДОСТАВКЕ</a>
+<h5 style="margin-top: 25px;">   <b>ПРАВИЛА ИСПОЛЬЗОВАНИЯ ПОДАРОЧНЫХ СЕРТИФИКАТОВ(ПЛАСТИКОВЫЕ КАРТЫ)</b></h5> 
+<a th:href="@{'/FAQ'}" style="color:black;" >ПОДРОБНЕЕ О ПРАВИЛАХ ВЫ МОЖЕТЕ УЗНАТЬ ПЕРЕЙДЯ ПО ССЫЛКЕ</a>
+  </div>
+      </div>
+  </div>
+  </div>
+</div>
+      <div class="footer">
+          <div th:insert="det/footer.html :: footer"></div>
+      </div>
+</body>
+</html>

@@ -26,6 +26,7 @@ public class ProductController {
 
     //метод возвращающий страницу добавления ного элемента
     @GetMapping("/addprod")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public String addprod(Model model){
         model.addAttribute("categories", categoryRepository.findAll());
 
@@ -37,6 +38,7 @@ public class ProductController {
 
     //логика добавления нового элемента в таблицу
     @PostMapping("/addproduct")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public String saveprod(@ModelAttribute("product") Product product,
                            @RequestParam(name = "category_id") Long categoryId, Model model) {
         Category category = categoryRepository.findById(categoryId).orElse(null);
@@ -93,6 +95,7 @@ public class ProductController {
 
 
     @GetMapping("/delete/{id}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     public String delete(@PathVariable(name = "id") Long id, Model model) {
 
         productRepository.deleteById(id);
