@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 <div class="card mb-3" style="max-width: 1200px;">
     <div class="row g-0">
         <div class="col-md-4" th:object="${product}">
-            <img src="https://www.monamie.kz/upload/resize_cache/iblock/a95/430_292_1/a95c555a50041a0abf6e41d1293138e6.jpg" class="img-fluid rounded-start" alt="...">
+            <img th:src="@{'/img/'+${product.image}}" class="img-fluid rounded-start" alt="..." width="400px">
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -27,20 +27,27 @@
                 <p class="card-text"><small class="text-muted">Код товара: 3274872444461</small></p>
                 <p class="card-text" th:field = "*{brand}" th:text="${product.getBrand()}"> </p>
                 <h5 class="card-title">N27 ROUGE INFUSÉ</h5>
-                <img src="https://www.monamie.kz/upload/resize_cache/iblock/245/78_78_1/2454f58722be91f5da56646f6efa5db1.jpg" class="img-fluid rounded-start" alt="..." style="max-width: 50px; height: 50 px;">
+                <img src="https://www.monamie.kz/upload/resize_cache/iblock/245/78_78_1/2454f58722be91f5da56646f6efa5db1.jpg"
+                     class="img-fluid rounded-start" alt="..." style="max-width: 50px; height: 50px;">
                 <p class="card-text"><small class="text-muted" th:field = "*{price}" th:text="${product.getPrice()}"></small></p>
                 <h5 class="card-title" th:field = "*{brand}" th:text="${product.getBrand()}"></h5>
-                <button type="button" class="btn btn-dark" style="max-width: 90px; height: 50 px; border-radius:0;">Купить</button>
-                <a class="btn btn-dark" th:href="@{'/edit/'+${product.getId}}">Изменить</a>
-                <a class="btn btn-danger ml-3" aria-current="page" th:href="@{'/delete/'+${product.getId}}">CANCEL</a>
+                <button type="button" class="btn btn-dark" style=" border-radius:0;" >Купить</button>
+
 
 
                 <p class="card-text"></p>
                 <p class="card-text"><small class="text-muted" th:field = "*{description}" th:text="${product.getDescription()}"></small></p>
+                <a class="btn btn-dark" th:href="@{'/edit/'+${product.getId}}" sec:authorize="hasRole('ROLE_SELLER')">Изменить</a>
+                <a class="btn btn-danger ml-3" aria-current="page" th:href="@{'/delete/'+${product.getId}}"
+                   sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_SELLER')">УДАЛИТЬ</a>
 
 
         </div>
     </div>
+</div>
+</div>
+<div class="footer">
+    <div th:insert="det/footer.html :: footer"></div>
 </div>
 </body>
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Интернет-магазин Monamie: Косметика, Ароматы, Подарки, Казахстан</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div>
+    <div class="header" style=" width: 100%">
+        <div><div th:insert="det/navbar1.html :: header"></div></div>
+        <div><div th:insert="det/navbar2.html :: header2"></div></div>
+        <div><div th:insert="det/navbar3.html :: header3"></div></div>
+    </div>
+    <div class="body">
+        <div class="container mt-6">
+            <div class="row">
+                <div class="col-6 mx-auto mt-3">
+                    <form th:action="@{'/updcar'}"  method="post" enctype="multipart/form-data">
+                        <div style="grid-template-columns: 30% 70%; display:grid; grid-row-gap: 20px">
+
+
+
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>КАРТИНКА 1:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <input class="form-control form-control-sm"  type="file" name="image1">
+                                </div>
+                            </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button class="btn btn-success">ДОБАВИТЬ</button>
+                            </div>
+                        </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label>КАРТИНКА 2:</label>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <input class="form-control form-control-sm"  type="file" name="image2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button class="btn btn-success">ДОБАВИТЬ</button>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <label>КАРТИНКА 3:</label>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <input class="form-control form-control-sm"  type="file" name="image3">
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button class="btn btn-success">СОХРАНИТЬ</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                    </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div th:insert="det/footer.html :: footer"></div>
+    </div>
+</div>
+</body>
+</html>
