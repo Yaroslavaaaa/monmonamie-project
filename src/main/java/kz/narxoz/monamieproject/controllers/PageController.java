@@ -79,7 +79,19 @@ public class PageController {
 
 
 
+    @GetMapping("/cert")
+    public String cert(Model model){
 
+        return "html/cert";
+    }
+
+
+
+    @GetMapping("/403")
+    public String err(Model model){
+
+        return "html/403";
+    }
 
 
 

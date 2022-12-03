@@ -21,7 +21,7 @@
         <div class="container mt-6">
             <div class="row">
                 <div class="col-6 mx-auto mt-3">
-                    <form th:action="@{/addproduct}" th:object="${product}" method="post">
+                    <form th:action="@{/addproduct}" th:object="${product}" method="post" enctype="multipart/form-data">
                         <div style="grid-template-columns: 30% 70%; display:grid; grid-row-gap: 20px">
                             <div class="row mt-3">
                                 <div class="col-12">
@@ -88,8 +88,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-12">
+                        <div class="row mt-3 nb-2">
+                            <div class="col-12" style="display: flex; justify-content: center;">
                                 <button class="btn btn-success">ДОБАВИТЬ</button>
                             </div>
                         </div>
@@ -103,7 +103,9 @@
             </div>
         </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+        <div th:insert="det/footer.html :: footer"></div>
+    </div>
 </div>
 </body>
 </html>

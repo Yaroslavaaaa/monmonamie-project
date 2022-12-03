@@ -15,20 +15,12 @@
     <div><div th:insert="det/navbar2.html :: header2"></div></div>
     <div><div th:insert="det/navbar3.html :: header3"></div></div>
 </div>
-<div class="card mb-3" style="max-width: 1600px;">
+<div class="card mb-3" >
     <div class="row g-0">
-        <div class="col-md-2">
-            <div class="list-group" style="max-width: 250px; height: 100px; border-radius:0;">
-                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                    О компании
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Доставка и оплата</a>
-                <a href="#" class="list-group-item list-group-item-action">Магазины</a>
-                <a href="#" class="list-group-item list-group-item-action">Контакты</a>
-                <a href="#" class="list-group-item list-group-item-action">Сертификаты</a>
-                <a href="#" class="list-group-item list-group-item-action">Отзывы</a>
-            </div>
-        </div><div class="col-md-10">
+        <div class="col-md-3">
+            <div th:insert="det/b-nav.html :: b-nav"></div>
+        </div>
+        <div class="col-md-9">
         <div class="card-body">
             <div class="card-body">
                 <p>

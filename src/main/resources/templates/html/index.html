@@ -28,7 +28,7 @@
     <div class="container" style="display: grid; grid-template-columns: repeat(4, 200px);
     grid-column-gap: 30px; margin-bottom: 40px; grid-row-gap: 30px">
         <div class="card" style="width: 13rem;"  th:each="product: ${products}">
-            <img th:src="${product.image}" class="card-img-top" alt="...">
+            <img th:src="@{'/img/'+${product.image}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <bold class="card-title" th:text="${product.brand}"></bold>
                 <p class="card-text" th:text="${product.name}"></p>
@@ -39,7 +39,9 @@
     </div>
 </div>
     <div><div th:insert="det/subscribe.html :: subscribe"></div></div>
-<div class="footer"> <div th:insert="det/footer.html :: footer"></div></div>
+<div class="footer">
+    <div th:insert="det/footer.html :: footer"></div>
+</div>
 </div>
 </body>
 </html>

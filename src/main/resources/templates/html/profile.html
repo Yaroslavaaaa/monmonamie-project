@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html
+        xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +25,8 @@
   </a>
   <a href="#" class="list-group-item list-group-item-action">Персональные данные</a>
   <a href="#" class="list-group-item list-group-item-action">Корзина</a>
-          <a th:href="@{'/addprod'}" class="list-group-item list-group-item-action">Добавить товар</a>
+          <a th:href="@{'/addprod'}" class="list-group-item list-group-item-action" sec:authorize="hasRole('ROLE_ADMIN')">Добавить товар</a>
+          <a href="#" class="list-group-item list-group-item-action">Загрузить картинки в карусель</a>
 </div>
     </div>
     <div class="col-md-8">
@@ -33,19 +35,17 @@
      <div class="card-body">
     <blockquote class="blockquote mb-0">
     
-         <h5 class="card-title" style="font-style: italic; font-size: 36px">Добрый день,
+         <h5 class="card-title" style="font-style: italic; font-size: 36px">Добро пожаловать,
              <span  style="font-family: resphektregular;font-size: 60px; color: #d70074" th:text="${currentUser.fullName}"></span></h5>
      <h5 style="color: white;">ASDFGHJKLMNBFDSDFGHJ</h5>
-      <a class="blockquote-footer"><a href="#" style="color: black;margin-left: 50px;>"  >Редактировать профиль</a>
+        <a class="blockquote-footer"><a href="#" style="color: black;margin-left: 50px;>"  >Редактировать профиль</a></a>
         <h5 style="color: white;">ASDFGHJKLMNBFDSDFGHJ</h5>
     <footer class="blockquote-footer">
         <form th:action="@{'/signout'}" method="post" id="logoutForm">
             <a class="dropdown-item" style="color: black;" href="JavaScript:void(0)"
                onclick="document.getElementById('logoutForm').submit()">Выйти -></a>
         </form>
-<!--        <a href="#" style="color: black;">Выйти -></a>-->
     </footer>
-
 
 
     </blockquote>
@@ -58,6 +58,9 @@
       </div>
     </div>
   </div>
+</div>
+<div class="footer">
+    <div th:insert="det/footer.html :: footer"></div>
 </div>
 </body>
 </html>
